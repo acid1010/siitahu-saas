@@ -185,8 +185,8 @@ h2 {
 
 .menu-image {
     width: 100%;
-    height: 200px;
-    object-fit: contain; /* Memastikan seluruh gambar terlihat */
+    aspect-ratio: 1 / 1; /* Membuat wadah gambar menjadi persegi */
+    object-fit: cover; /* Mengisi wadah secara proporsional */
 }
 
 .menu-image-placeholder.addon {
