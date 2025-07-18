@@ -182,6 +182,13 @@ h2 {
     justify-content: center;
     color: #aaa;
 }
+
+.menu-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+}
+
 .menu-image-placeholder.addon {
     height: 150px;
 }
