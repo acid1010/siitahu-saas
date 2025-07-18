@@ -1,10 +1,11 @@
 :root {
     --primary-color: #ffbd4a;
     --secondary-color: #ffd700;
-    --background-color: #ffffff;
+    --background-color: #fff;
     --text-color: #374151;
     --accent-color: #1f2937;
     --whatsapp-green: #25D366;
+    --section-bg-light: #fffaf2;
 }
 
 body {
@@ -27,7 +28,10 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
 h2 {
@@ -36,61 +40,83 @@ h2 {
     margin-bottom: 50px;
 }
 
-.cta-primary, .cta-secondary {
-    display: inline-block;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: transform 0.2s, background-color 0.2s;
-    margin: 5px;
-}
-
 .cta-primary {
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.2s, background-color 0.2s;
     background-color: var(--primary-color);
     color: var(--accent-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .cta-primary:hover {
     background-color: var(--secondary-color);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
-.cta-secondary {
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-.cta-secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color);
-    transform: translateY(-2px);
-}
-
-/* Sections */
+/* Hero Section */
 .hero-section {
-    background: linear-gradient(to bottom, #ffffff, #fff9f0);
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 100px 0;
+    color: #fff;
+}
+
+.hero-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image-placeholder .placeholder-text {
+    font-size: 2rem;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-section .subtitle {
-    max-width: 600px;
-    margin: 20px auto 30px;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    margin: 10px auto 30px;
+    font-weight: 400;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-.features-section, .how-it-works-section, .testimonials-section, .pricing-section {
+/* Sections */
+.why-us-section, .menu-section, .how-it-works-section, .location-section {
     padding: 80px 0;
 }
 
-.features-grid, .pricing-grid {
+.menu-section, .location-section {
+    background-color: var(--section-bg-light);
+}
+
+.features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
-.feature-card, .pricing-card, .testimonial-card {
+.feature-card {
     background: #fff;
     padding: 30px;
     border-radius: 12px;
@@ -99,7 +125,7 @@ h2 {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.feature-card:hover, .pricing-card:hover {
+.feature-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
@@ -110,6 +136,50 @@ h2 {
     margin-bottom: 15px;
 }
 
+/* Menu Section */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.menu-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    overflow: hidden;
+}
+
+.menu-image-placeholder {
+    height: 200px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+}
+.menu-image-placeholder.addon {
+    height: 150px;
+}
+
+.menu-card h3 {
+    margin: 20px 0 10px;
+}
+
+.menu-card .menu-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding-bottom: 20px;
+}
+
+.addons-title {
+    margin-top: 60px;
+}
+
+/* How to Order Section */
 .steps-container {
     display: flex;
     justify-content: space-between;
@@ -131,49 +201,24 @@ h2 {
     margin-bottom: 15px;
 }
 
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+/* Location Section */
+.location-section .address {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+.map-placeholder {
+    height: 400px;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 1.5rem;
 }
 
-.testimonial-card .rating {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-.testimonial-card .customer {
-    font-style: italic;
-    font-weight: 500;
-}
-
-.pricing-card.popular {
-    border: 2px solid var(--primary-color);
-    transform: scale(1.05);
-}
-
-.pricing-card .price {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 15px 0;
-}
-
-.pricing-card .price span {
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-.pricing-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.pricing-card ul li {
-    margin-bottom: 10px;
-}
-
+/* Footer */
 .footer-section {
     background: var(--accent-color);
     color: #fff;
@@ -183,8 +228,8 @@ h2 {
 
 .social-links a {
     color: #fff;
-    margin: 0 10px;
-    font-size: 1.5rem;
+    margin: 0 15px;
+    font-size: 1.8rem;
     transition: color 0.2s;
 }
 
@@ -192,6 +237,7 @@ h2 {
     color: var(--primary-color);
 }
 
+/* Floating WA Button */
 .whatsapp-floating-button {
     position: fixed;
     bottom: 20px;
@@ -217,13 +263,16 @@ h2 {
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     h2 {
         font-size: 2rem;
     }
-    .steps-container, .testimonial-grid {
+    .steps-container {
         flex-direction: column;
-        grid-template-columns: 1fr;
+    }
+    .hero-section {
+        height: 50vh;
     }
 }
+
