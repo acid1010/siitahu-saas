@@ -1,0 +1,6 @@
+.cargo/
+.nvm/
+0g-swap/
+Generator-wallet-tea/
+node_modules/
+dist/
