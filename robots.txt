@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://acid1010.github.io/siitahu-saas/sitemap.xml
+Sitemap: https://siitahu.store/sitemap.xml
