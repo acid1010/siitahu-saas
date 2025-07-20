@@ -4,3 +4,5 @@
 Generator-wallet-tea/
 node_modules/
 dist/
+opencode.exe
+*:Zone.Identifier

@@ -8,12 +8,17 @@
     --section-bg-light: #fffaf2;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     color: var(--text-color);
     background-color: var(--background-color);
-    line-height: 1.6;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
 }
 
 .container {
@@ -28,47 +33,50 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 4.2rem;
     font-weight: 900;
     color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
+    animation: fadeInDown 1s ease-in-out;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     text-align: center;
-    margin-bottom: 50px;
-    color: var(--primary-color); /* Diubah menjadi kuning */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 60px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
 .cta-primary {
     display: inline-block;
-    padding: 15px 35px;
+    padding: 18px 40px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.1rem;
-    transition: transform 0.2s, background-color 0.2s;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease-out, background-color 0.3s, box-shadow 0.3s;
     background-color: var(--primary-color);
     color: var(--accent-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 .cta-primary:hover {
     background-color: var(--secondary-color);
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 /* Hero Section */
 .hero-section {
     position: relative;
-    height: 70vh;
+    height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: #fff;
+    overflow: hidden;
 }
 
 .hero-image-placeholder {
@@ -78,14 +86,13 @@ h2 {
     width: 100%;
     height: 100%;
     background-color: #333;
-    /* Menambahkan gambar background */
     background-image: url('/src/images/tahuutama.jpg');
     background-size: cover;
     background-position: center;
     z-index: 1;
+    animation: zoomIn 10s ease-in-out infinite alternate;
 }
 
-/* Menambahkan overlay gradient */
 .hero-image-placeholder::after {
     content: '';
     position: absolute;
@@ -94,104 +101,113 @@ h2 {
     width: 100%;
     height: 100%;
     background-image: linear-gradient(to top, rgba(255, 189, 74, 0.8), rgba(255, 215, 0, 0.5));
-    z-index: 2; /* Overlay di atas gambar */
+    z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 3; /* Konten di atas overlay */
+    z-index: 3;
 }
 
 .hero-section .subtitle {
-    font-size: 1.5rem;
-    margin: 10px auto 30px;
+    font-size: 1.6rem;
+    margin: 15px auto 35px;
     font-weight: 400;
-    color: var(--accent-color); /* Teks subtitle lebih gelap agar kontras */
+    color: var(--accent-color);
     text-shadow: none;
+    animation: fadeInUp 1s ease-in-out 0.5s;
+    animation-fill-mode: backwards;
 }
 
 .hero-section .tagline {
     font-family: 'Pacifico', cursive;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: #fff;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     margin-top: 0;
 }
 
 /* Sections */
 .why-us-section, .menu-section, .how-it-works-section, .location-section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .menu-section, .location-section {
     background-color: var(--section-bg-light);
 }
 
-/* Mengubah section "Cara Pesan" menjadi kuning */
 .how-it-works-section {
     background-color: var(--primary-color);
 }
 
 .how-it-works-section h2 {
-    color: var(--accent-color); /* Judul kontras di background kuning */
+    color: var(--accent-color);
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
 .feature-card {
     background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    border: 1px solid #eee;
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transform: translateY(-12px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.12);
 }
 
 .feature-card i {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 /* Menu Section */
 .menu-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
     justify-content: center;
 }
 
 .menu-card {
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     text-align: center;
     overflow: hidden;
-    border: 2px solid var(--primary-color); /* Border kuning */
+    border: 2px solid var(--primary-color);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
-.menu-image-placeholder {
-    height: 200px;
-    background-color: #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #aaa;
+.menu-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.menu-image-container {
+    overflow: hidden;
 }
 
 .menu-image {
     width: 100%;
-    aspect-ratio: 1 / 1; /* Membuat wadah gambar menjadi persegi */
-    object-fit: cover; /* Mengisi wadah secara proporsional */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.4s ease-out;
+}
+
+.menu-card:hover .menu-image {
+    transform: scale(1.1);
 }
 
 .menu-image-placeholder.addon {
@@ -199,119 +215,182 @@ h2 {
 }
 
 .menu-card h3 {
-    margin: 20px 0 10px;
+    margin: 25px 0 10px;
+    font-size: 1.5rem;
 }
 
 .menu-card .menu-price {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--primary-color);
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 
 .addons-title {
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 /* How to Order Section */
 .steps-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 40px;
     text-align: center;
+    position: relative;
 }
 
 .step .step-number {
-    width: 50px;
-    height: 50px;
-    background-color: #fff; /* Lingkaran putih di background kuning */
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
     color: var(--accent-color);
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease-out;
+}
+
+.step:hover .step-number {
+    transform: scale(1.1);
 }
 
 .step h3, .step p {
-    color: var(--accent-color); /* Teks kontras di background kuning */
+    color: var(--accent-color);
+}
+
+.step h3 {
+    font-size: 1.4rem;
 }
 
 /* Location Section */
 .location-section .address {
     text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-style: italic;
 }
-.map-placeholder {
-    height: 400px;
-    background-color: #e0e0e0;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #aaa;
-    font-size: 1.5rem;
+.map-container {
+    height: 450px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    border: 2px solid #ddd;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* Footer */
 .footer-section {
-    background: var(--primary-color); /* Footer kuning */
-    color: var(--accent-color); /* Teks gelap di footer */
-    padding: 40px 0;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 60px 0;
     text-align: center;
 }
 
+.footer-section p {
+    margin-bottom: 20px;
+}
+
 .social-links a {
-    color: var(--accent-color); /* Ikon sosial media gelap */
-    margin: 0 15px;
-    font-size: 1.8rem;
-    transition: color 0.2s;
+    color: #fff;
+    margin: 0 18px;
+    font-size: 2rem;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .social-links a:hover {
-    color: #fff; /* Hover menjadi putih */
+    color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.footer-section .copyright {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #aaa;
 }
 
 /* Floating WA Button */
 .whatsapp-floating-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 25px;
+    right: 25px;
     background-color: var(--whatsapp-green);
     color: #fff;
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 2.2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     z-index: 1000;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-out, background-color 0.3s;
 }
 
 .whatsapp-floating-button:hover {
     transform: scale(1.1);
+    background-color: #20c158;
 }
+
+/* Keyframe Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
     h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     .steps-container {
         flex-direction: column;
     }
     .hero-section {
-        height: 50vh;
+        height: 60vh;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
     }
 }
 
